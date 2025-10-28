@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REJA</title>
+    <title>Plan</title>
     <link rel="stylesheet" 
     href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" 
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" 
@@ -11,7 +11,8 @@
 </head>
 <body style="background-color: #b8bbd1;">
     <div class="container">
-        <h1 class="display-4 text-center py-1">REJA VA MAQSADLAR</h1>
+        <h1 class="text-center pt-3">Plan and goals</h1>
+        <h2 class="text-center pb-3">Try using CRUD operations</h2>
 
         <!-- Form -->
         <div class="jumbotron p-3 shadow-sm">
@@ -27,7 +28,7 @@
                         style="flex: 1"
                     />
                     <button class="btn btn-primary" style="border-radius: 20px;">
-                        Yangi Reja Qo'shish
+                        Add a New Plan
                     </button>
                 </div>
             </form>
@@ -40,10 +41,10 @@
                     <span class="item-text"><%=item.reja%></span>
                     <div>
                         <button data-id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">
-                            O'zgartirish
+                            Update
                         </button>
                         <button data-id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">
-                            O'chirish
+                            Delete
                         </button>
                     </div>
                 </li>
@@ -51,7 +52,7 @@
         </ul>
 
         <button id="clean-all" class="btn btn-danger" style="border-radius: 20px;">
-            Hamma Rejani O'chirish
+            Delete All Plans
         </button>
     </div>
 

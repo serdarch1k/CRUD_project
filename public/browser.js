@@ -1,4 +1,4 @@
-console.log("FrontEnd JS ishga tushdi");
+console.log("FrontEnd JS has started");
 
 function itemTemplate(item) {
    return `<li 
@@ -6,10 +6,10 @@ function itemTemplate(item) {
       <span class="item-text">${item.reja}</span>
       <div>
          <button data-id="${item._id}" class="edit-me btn btn-secondary btn-sm mr-1">
-               O'zgartirish
+               Update
          </button>
          <button data-id="${item._id}" class="delete-me btn btn-danger btn-sm">
-               O'chirish
+               Delete
          </button>
       </div>
    </li>`;
@@ -31,7 +31,7 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
          createField.focus();
       })
       .catch((err) => {
-         console.log("Iltimos qaytadan harakat qiling!");
+         console.log("Please try again!");
       });
 });
 
@@ -39,7 +39,7 @@ document.addEventListener("click", function (e) {
    // delete oper
    console.log(e.target);
    if (e.target.classList.contains("delete-me")) {
-      if (confirm("Aniq o'chirmoqchimisiz?")) {
+      if (confirm("Are you sure?")) {
          axios
             .post("/delete-item", { id: e.target.getAttribute("data-id") })
             .then((response) => {
@@ -47,7 +47,7 @@ document.addEventListener("click", function (e) {
                e.target.parentElement.parentElement.remove();
             })
             .catch((err) => {
-               console.log("Iltimos qaytadan harakat qiling!");
+               console.log("Please try again!");
             });
       }
    }
@@ -55,7 +55,7 @@ document.addEventListener("click", function (e) {
    // edit oper
    if (e.target.classList.contains("edit-me")) {
       let userInput = prompt(
-         "O'zgartirish kiriting",
+         "Please make changes",
          e.target.parentElement.parentElement.querySelector(".item-text").innerHTML
       );
       if (userInput) {
@@ -71,7 +71,7 @@ document.addEventListener("click", function (e) {
                ).innerHTML = userInput;
             })
             .catch((err) => {
-               console.log("Iltimos qaytadan harakat qiling!");
+               console.log("Please try again!");
             });
       }
    }
