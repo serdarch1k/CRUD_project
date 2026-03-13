@@ -1,7 +1,7 @@
 {
   "name": "reja",
   "version": "1.0.0",
-  "description": "bu mening ikkinchi reja loyiham",
+  "description": "CRUD web application built with Node.js, Express, MongoDB, and EJS",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
